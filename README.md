@@ -42,7 +42,7 @@ db.titanic.find()
 ```
 
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f5b1"), "Survived" : 0, "Pclass" : 3, "Name" : "Mr. Owen Harris Braund", "Sex" : "male", "Age" : 22, "Siblings/Spouses Aboard" : 1, "Parents/Children Aboard" : 0, "Fare" : 7.25 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5b2"), "Survived" : 1, "Pclass" : 1, "Name" : "Mrs. John Bradley (Florence Briggs Thayer) Cumings", "Sex" : "female", "Age" : 38, "Siblings/Spouses Aboard" : 1, "Parents/Children Aboard" : 0, "Fare" : 71.2833 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5b3"), "Survived" : 1, "Pclass" : 3, "Name" : "Miss. Laina Heikkinen", "Sex" : "female", "Age" : 26, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 7.925 }
@@ -71,7 +71,7 @@ Type "it" for more
 db.titanic.find({"Survived": 1})
 ```
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f5b2"), "Survived" : 1, "Pclass" : 1, "Name" : "Mrs. John Bradley (Florence Briggs Thayer) Cumings", "Sex" : "female", "Age" : 38, "Siblings/Spouses Aboard" : 1, "Parents/Children Aboard" : 0, "Fare" : 71.2833 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5b3"), "Survived" : 1, "Pclass" : 3, "Name" : "Miss. Laina Heikkinen", "Sex" : "female", "Age" : 26, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 7.925 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5b4"), "Survived" : 1, "Pclass" : 1, "Name" : "Mrs. Jacques Heath (Lily May Peel) Futrelle", "Sex" : "female", "Age" : 35, "Siblings/Spouses Aboard" : 1, "Parents/Children Aboard" : 0, "Fare" : 53.1 }
@@ -100,7 +100,7 @@ Type "it" for more
 db.titanic.find({"Parents/Children Aboard": {$ne: 0}})
 ```
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f5b8"), "Survived" : 0, "Pclass" : 3, "Name" : "Master. Gosta Leonard Palsson", "Sex" : "male", "Age" : 2, "Siblings/Spouses Aboard" : 3, "Parents/Children Aboard" : 1, "Fare" : 21.075 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5b9"), "Survived" : 1, "Pclass" : 3, "Name" : "Mrs. Oscar W (Elisabeth Vilhelmina Berg) Johnson", "Sex" : "female", "Age" : 27, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 2, "Fare" : 11.1333 }
 { "_id" : ObjectId("6227da34a4b86f206a17f5bb"), "Survived" : 1, "Pclass" : 3, "Name" : "Miss. Marguerite Rut Sandstrom", "Sex" : "female", "Age" : 4, "Siblings/Spouses Aboard" : 1, "Parents/Children Aboard" : 1, "Fare" : 16.7 }
@@ -129,7 +129,7 @@ Type "it" for more
 db.titanic.find({"Pclass": {$lte: 2}}).sort({"Fare": 1})
 ```
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f6b1"), "Survived" : 0, "Pclass" : 1, "Name" : "Mr. William Harrison", "Sex" : "male", "Age" : 40, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 0 }
 { "_id" : ObjectId("6227da34a4b86f206a17f6bf"), "Survived" : 0, "Pclass" : 2, "Name" : "Mr. Francis Parkes", "Sex" : "male", "Age" : 21, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 0 }
 { "_id" : ObjectId("6227da34a4b86f206a17f754"), "Survived" : 0, "Pclass" : 2, "Name" : "Mr. Alfred Fleming Cunningham", "Sex" : "male", "Age" : 22, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 0 }
@@ -155,7 +155,7 @@ Type "it" for more
 
 Обновим данные для пассажира Mr. Charles Eugene Williams  
 До апдейта:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f5c2"), "Survived" : 1, "Pclass" : 2, "Name" : "Mr. Charles Eugene Williams", "Sex" : "male", "Age" : 23, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 13 }
 ```
 Апдейт:
@@ -167,7 +167,7 @@ db.titanic.updateOne({"Name": "Mr. Charles Eugene Williams"}, {$set: {"Fare": 13
 db.titanic.find({"Name": "Mr. Charles Eugene Williams"})
 ```
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6227da34a4b86f206a17f5c2"), "Survived" : 1, "Pclass" : 2, "Name" : "Mr. Charles Eugene Williams", "Sex" : "male", "Age" : 23, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 130 }
 ```
 
@@ -180,7 +180,7 @@ db.titanic.insert({"Survived": 1, "Name": "Aleksej Volkov", "Fare": 1000000000})
 db.titanic.find().sort({"Fare": -1})
 ```
 Вывод:
-``` json
+``` 
 { "_id" : ObjectId("6229303aa540a37171a8b9dd"), "Survived" : 1, "Name" : "Aleksej Volkov", "Fare" : 1000000000 }
 { "_id" : ObjectId("6227da34a4b86f206a17f6b6"), "Survived" : 1, "Pclass" : 1, "Name" : "Miss. Anna Ward", "Sex" : "female", "Age" : 35, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 0, "Fare" : 512.3292 }
 { "_id" : ObjectId("6227da34a4b86f206a17f85b"), "Survived" : 1, "Pclass" : 1, "Name" : "Mr. Thomas Drake Martinez Cardeza", "Sex" : "male", "Age" : 36, "Siblings/Spouses Aboard" : 0, "Parents/Children Aboard" : 1, "Fare" : 512.3292 }
